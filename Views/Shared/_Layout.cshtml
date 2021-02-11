@@ -1,0 +1,37 @@
+﻿<!--This is the layout for all of the website. Includes the Nav Bar, and the footer along with any info that needs to be linked to every page.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="text-center">
+    <nav class="navbar navbar-light navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto d-flex flex-row bd-highlight mb-3">
+            <li class="navbar-item p-2 pl-4 bd-highlight"><a class="nav-link" asp-action="Index">Home</a></li>
+            <li class="navbar-item p-2 pl-4 bd-highlight"><a class="nav-link" asp-action="SubmitFoodPlace">Submit Your Own Recommendation</a></li>
+            <li class="navbar-item p-2 pl-4 bd-highlight"><a class="nav-link" asp-action="RecommendedPlacesList">View Suggestions</a></li>
+        </ul>
+    </nav>
+    <br />
+    <br />
+    <div class="text-center">
+        <h1>@ViewBag.Header</h1>
+    </div>
+    
+    
+    @RenderBody()
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer>Cameron Keetch, Copyrighted 2021</footer>
+</body>
+</html>

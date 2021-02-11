@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Top 5 Restaurants";
+    ViewBag.Header = "Top 5 Restaurants in Provo:";
+}
+
+<!--Returns a enumberable string (because that is what the datatype is-->
+
+@model IEnumerable<string>
+
+<h4>This site shows the Top 5 Restaurants in Provo!</h4>
+<img src="~/img/SushiPic.jpg" width="500" />
+
+<br />
+<br />
+<h4 class="bg-light">These are the best restaurants in (or near) Provo (according to Cameron Keetch):</h4>
+
+<!--Goes through the model and displays the information based on what is in the model.-->
+<div class="list-group">
+    <ul>
+        @foreach (string r in Model)
+        {
+            <li class="list-group-item">@r</li>
+        }
+    </ul>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Recommended Restaurants";
+    ViewBag.Title = "A list of restaurants compiled by users of this site.";
+}
+
+@model IEnumerable<CameronKeetch_Assignment4.Models.SubmitFoodPlace> 
+
+<!--This page shows the places recommended by users of the website. It does so by using Razor Code to show each instance of the SubmitFoodPlace model. Bootstrap is included.-->
+
+<div class="text-center">
+    <h4>Here are the restaurants submitted by users:</h4>
+
+    <div class="table-responsive" style="max-width:50rem; margin:0 auto;">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr><th scope="col">User:</th><th scope="col">Restaurant Name:</th><th scope="col">Favorite Dish:</th><th scope="col">Phone Number:</th></tr>
+            </thead>
+
+            <tbody>
+                @foreach (CameronKeetch_Assignment4.Models.SubmitFoodPlace x in Model)
+                {
+                    <tr>
+                        <td>@x.userName</td>
+                        <td>@x.restName</td>
+                        <td>@x.favDish</td>
+                        <td>@x.restPhone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

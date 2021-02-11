@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Submit Restaurant Recommendation";
+    ViewBag.Title = "Restaurant Recommendation";
+}
+
+@model CameronKeetch_Assignment4.Models.SubmitFoodPlace
+
+<!--This portion of the code is designed to allow the user to input info into the model SubmitFoodPlace, and allow it to create a list.-->
+
+<form asp-action="SubmitFoodPlace" method="post" style="max-width: 50rem; text-align:center; margin:0 auto;">
+    <div>
+        <div class="form-group col-lg1">
+            <label class="form-control-file" asp-for="userName">User Name:</label>
+            <input class="form-control-file col-xs-4" asp-for="userName" />
+        </div>
+
+        <div class="form-group col-lg1">
+            <label class="form-control-file" asp-for="restName">Restaurant Name:</label>
+            <input class="form-control-file col-xs-4" asp-for="restName" />
+        </div>
+
+        <div class="form-group col-lg1">
+            <label class="form-control-file" asp-for="favDish">Favorite Dish:</label>
+            <input class="form-control-file col-xs-4" asp-for="favDish" />
+        </div>
+
+        <div class="form-group col-lg1">
+            <label class="form-control-file" asp-for="restPhone">Restaurant Phone Number:</label>
+            <input class="form-control-file col-xs-4" asp-for="restPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+            <p>Format: ###-###-####</p>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <button class="btn btn-dark" type="submit">Submit Recommendation</button>
+
+
+    <!--Shows any errors that may happen.-->
+    <div asp-validation-summary="All"></div>
+</form>
